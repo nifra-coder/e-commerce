@@ -1,0 +1,62 @@
+@media screen and (max-width:1300px) {
+    .leftcontent h1{
+        font-size: 50px;
+        margin: 1.5em;
+        
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 2.5px rgb(12, 11, 11);
+        letter-spacing: 5px;
+    } 
+    #head2{
+        position: relative;
+        bottom: 100px;
+        right: 40px;
+      }
+      .borderimg img{
+        width: 370px;
+        height: 400px;
+        margin-left: 2em;
+        margin-top: 2em;
+        margin-bottom: 2em;
+      
+    
+    
+    }
+    /* .borderimg{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+    
+    
+
+    #dr{
+        display: none;
+    }
+
+    #dr1{
+        display: none;
+
+    }
+    #dr2{
+        display: none;
+
+    }
+    #dr3{
+        display: none;
+
+    }
+    #dr4{
+        display: none;
+
+    }
+    #dr5{
+        display: none;
+
+    }
+
+    .i-solid{
+        display: none;
+    }
+
+    
+}

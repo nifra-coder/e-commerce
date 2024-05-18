@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="product1.html">
+    <link rel="stylesheet" href="product2.html">
+
+  <title>Template area</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'poppins', sans-serif;
+    }
+
+    .container {
+      display: grid;
+      grid-gap: 1em;
+      grid-template-areas:
+        'head head head head'
+        'aside section1 section1 section1'
+      ;
+
+    }
+
+    .item {
+      background-color: white;
+      color: rgb(5, 5, 5);
+      padding: 12px 30px;
+      
+    }
+
+    #head {
+      grid-area: head;
+      text-align: center;
+
+    }
+
+    #head h1 {
+      font-size: 20px;
+      font-weight: 300;
+      color: grey;
+      padding-top: 2.5em;
+    }
+
+    #head h2 {
+      font-size: 28px;
+      font-weight: 300;
+      padding-top: 1em;
+    }
+
+    
+
+    #aside {
+      grid-area: aside;
+      margin-left: 2em;
+    }
+
+    /* nav section */
+    .log {
+      text-decoration: none;
+      color: rgba(0, 0, 0, 1);
+      font-size: 60px;
+      font-weight: 200;
+    }
+
+
+    a {
+      text-decoration: none;
+      /* display: n; */
+    }
+
+
+
+    nav {
+      max-width: 100%;
+      margin: auto;
+      padding: 1rem 1rem;
+
+
+    }
+
+    .nav__attachment {
+
+      background-color: rgb(253, 253, 253);
+
+    }
+
+    .nav__links {
+      text-align: center;
+    }
+
+    #cart {
+      position: absolute;
+      top: 40px;
+      right: 26px;
+      font-size: 22px;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px rgb(54, 52, 52);
+    }
+
+    #heart {
+      position: absolute;
+      top: 39px;
+      right: 70px;
+      font-size: 22px;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px rgb(54, 52, 52);
+      cursor: pointer;
+
+    }
+
+    #mag {
+      position: absolute;
+      top: 40px;
+      right: 153px;
+      font-size: 20px;
+      color: rgb(90, 88, 88);
+      cursor: pointer;
+
+
+
+    }
+
+    #user {
+      position: absolute;
+      top: 39px;
+      right: 111px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px rgb(54, 52, 52);
+    }
+
+    .customizecontainer {
+      /* margin: 5em 2em 2em 5em; */
+      width: 10rem;
+      height: 10rem;
+      overflow: hidden;
+      position: relative;
+      border-radius: 50%;
+
+    }
+
+    .customizecontainer img {
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      transition: all 0.9s;
+
+    }
+
+    .caption {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background-color: black;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      opacity: 0;
+      transition: all 0.5s;
+    }
+
+
+    .customizecontainer:hover .caption {
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .customizecontainer:hover img {
+      transform: scale(1.3);
+      border-radius: 50%;
+    }
+
+    .caption h4 {
+      padding-top: 5em;
+      font-size: 12px;
+    }
+
+    .customizeimg {
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 2em;
+      margin-bottom: 3em;
+    }
+
+    #aside h1 {
+      font-weight: 400;
+      font-size: 20px;
+      width: 200px;
+      height: 38px;
+      background-color: rgb(221, 218, 213);
+      margin-bottom: 1em;
+      padding-left: 1em;
+      padding-top: 3px;
+
+    }
+
+    #linedown {
+      border: none;
+      border-bottom: 1px solid #dbd7d7;
+    }
+
+    .rad {
+      margin-bottom: 1em;
+    }
+
+
+
+    .container2 {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .container2 input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: #eee;
+    }
+
+    .container2:hover input~.checkmark {
+      background-color: #ccc;
+    }
+
+    .container2 input:checked~.checkmark {
+      background-color: black;
+    }
+
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    .container2 input:checked~.checkmark:after {
+      display: block;
+    }
+
+    .container2 .checkmark:after {
+      left: 5px;
+      top: 2px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+
+    /* start of section- images */
+    #section1{
+      grid-area:section1 ;
+    }
+    .faicon{
+      position: relative;
+      left: 0px;
+      bottom: 0px;
+      font-size: 28px;
+      display: flex;
+      gap: 1rem;
+
+    }
+    #list{
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1.5px rgb(141, 2, 2);
+    }
+    #grip{
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1.5px rgb(53, 47, 47);
+    }
+    .bestsellers{
+    background-color: white;
+}
+.sectionheader{
+    display: flex;
+    gap: 8rem;
+    margin-left: 6em;
+}
+.sectionheader h1{
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+}
+.sectionheader p a{
+    position: relative;
+    top: 35px;
+    left: 0px;
+    font-size: 20px;
+}
+#angle-right{
+    color: #8d8b8b;
+    font-size: 15px;
+}
+.selected{
+    text-decoration: underline;
+}
+.selects:hover{
+    text-decoration: underline;
+
+}
+.tc-container{
+   
+    position: relative;
+
+}
+.tc-container img{
+    width: 284px;
+    height: 350px;
+    cursor: pointer;
+    display: block;
+    
+}
+.top-img{
+  display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: all 1.2s ease;
+}
+.top-img:hover{
+    opacity: 1;
+}
+
+.whole{
+    display: flex;
+   justify-content: space-evenly;
+   gap: 1rem;
+ 
+   
+}
+
+
+.productcard {
+    width: 285px;
+    background-color: rgb(248, 241, 241);
+    margin-bottom: 2em;
+}
+
+.productcard img {
+border-radius: 20px;
+}
+
+
+.productcard h4 {
+    font-size: 1em;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0.5em 0em 0.2em 0em;
+    padding-left: 1em;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.productcard .amt {
+    font-size: 1.2em;
+    padding: 0em 1em 1em 1em;
+    display: flex;
+    gap: 1rem;
+    /* justify-content: space-between; */
+    align-items: center;
+    font-weight: 400;
+
+}
+
+.productcard .strikeheart {
+    padding: 0em 1.6em 0em 1.2em;
+    font-weight: 400;
+    margin: 0;
+
+
+}
+
+.productcard #strike {
+    font-size: 1.2em;
+    text-decoration: line-through;
+}
+
+.productcard #plus {
+    background-color: #313030;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 1em;
+    font-weight: 500;
+    position: relative;
+    left: 41px;
+    display: none;
+
+
+}
+
+#heartred {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px rgb(8, 8, 8);
+    font-size: 20px;
+    padding: 0.9em 1.7em 0px 6px;
+    /* display: none; */
+    cursor: pointer;
+}
+
+#heartred:hover {
+    -webkit-text-fill-color: rgb(247, 32, 32);
+    -webkit-text-stroke: 2px rgb(247, 28, 28);
+
+
+}
+#btnsol{
+  background-color: #313030;
+    color: white;
+    border: none;
+    width: 74px;
+    height: 28px;
+    font-size: 1em;
+    font-weight: 500;
+    position: relative;
+    left: 173px;
+    bottom: 336px;
+    text-transform: uppercase;
+}
+
+
+#btnred{
+  background-color: #eb0000;
+    color: white;
+    border: none;
+    width: 77px;
+    height: 28px;
+    font-size: 1em;
+    font-weight: 500;
+    position: relative;
+    left: 173px;
+    bottom: 336px;
+    text-transform: uppercase;
+
+}
+
+
+
+/* footer section */
+.footer {
+    height: 300px;
+    background-color: #181616;
+    color: white;
+}
+
+.row10 {
+    display: flex;
+    justify-content: space-between;
+padding-top: 3em;
+}
+
+.container10 {
+    margin: 3em 7em 0px 7em;
+}
+
+.row10 ul li a {
+
+    text-decoration: none;
+    color: rgb(250, 245, 245);
+    font-size: 14px;
+
+}
+
+.row10 ul li a span {
+    color: #070707;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.row10 ul li {
+    list-style: none;
+    padding-bottom: 5px;
+}
+
+.aboutweb p {
+    font-size: 15px;
+
+}
+
+.aboutweb p strong {
+    color: #f0f5f5;
+    font-size: 18px;
+
+}
+
+.aboutweb h3 {
+    font-weight: 300;
+    font-size: 36px;
+    letter-spacing: 5px;
+    color: #fafafa;
+}
+
+.row10 ul h4 {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #f5f5f5;
+}
+
+.social-content h4 {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.social-links a i {
+    color: #f5f5f5;
+    font-size: 30px;
+    margin: 6px;
+}
+
+/* footer-bottom */
+.footer-botom {
+    background-color: #080808;
+    color: white;
+    height: 70px;
+
+}
+
+.container11 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright {
+    margin-top: 2em;
+    margin-left: 4em;
+    color: #ced0d3;
+
+}
+
+.credits {
+    margin-top: 2em;
+    color: #ced0d3;
+    margin-right: 4em;
+    /* font-size: 10px; */
+
+}
+
+.credits a {
+    text-decoration: none;
+    color: #edeff0;
+
+}
+
+
+
+
+
+
+  </style>
+</head>
+
+<body>
+  <header class="nav__attachment">
+
+    <nav class="nav__bar">
+
+      <ul class="nav__links">
+        <li class="log">noon’i</li>
+      </ul>
+      <div class="mag">
+        <i class="fa fa-magnifying-glass" id="mag"></i>
+      </div>
+
+      <div class="cart">
+        <i class="fa fa-cart-shopping" id="cart"></i>
+        <i class="fa fa-heart" id="heart"></i>
+        <i class="fa fa-circle-user" id="user"></i>
+      </div>
+
+      <!-- <button class="btn">Get started</button> -->
+    </nav>
+  </header>
+  <hr>
+
+  <div class="container">
+    <div class="item" id="head">
+      <h1>Home / Shop</h1>
+      <h2>Shop</h2>
+      <div class="customizeimg">
+        <div class="customizecontainer" >
+          <img src="image/women2.2.jpg" alt="" class="imgg" >
+          <div class="caption">
+            <h4>women</h4>
+            <p>22 product</p>
+            <p><i class="fa-solid fa-link"></i></p>
+          </div>
+        </div>
+        <div class="customizecontainer">
+          <img src="image/men-shirts.jpg" alt="" class="imgg">
+          <div class="caption">
+            <h4>men</h4>
+            <p>10 product</p>
+            <p><i class="fa-solid fa-link"></i></p>
+          </div>
+        </div>
+        <div class="customizecontainer">
+          <img src="image/women6.jpg" alt="" class="imgg">
+          <div class="caption">
+            <h4>T-shirt</h4>
+            <p>12 product</p>
+            <p><i class="fa-solid fa-link"></i></p>
+          </div>
+        </div>
+        <div class="customizecontainer">
+          <img src="image/men-coats.jpg" alt="" class="imgg">
+          <div class="caption">
+            <h4>coat</h4>
+            <p>17 product</p>
+            <p><i class="fa-solid fa-link"></i></p>
+          </div>
+        </div>
+        <div class="customizecontainer">
+          <img src="image/kids.jpg" alt="" class="imgg">
+          <div class="caption">
+            <h4>kids</h4>
+            <p>12 product</p>
+            <p><i class="fa-solid fa-link"></i></p>
+          </div>
+        </div>
+      </div>
+      <hr id="linedown">
+    </div>
+
+
+    <div id="section1" class="item">
+      <div class="faicon">
+      <i id="list" class="fa-solid fa-list"></i>
+      <i id="grip" class="fa-solid fa-grip"></i>
+      </div>
+      <section class="bestsellers">
+        <div class="sectionheader">
+          <p><a href="">see all<i class="fa-solid fa-angles-right" id="angle-right"></i></a></p>
+        </div>
+        <div class="bestsell">
+          <div class="whole">
+  
+            <div class="productcard">
+              <div class="tc-container">
+              
+
+                <img src="image/women17.1.jpg" alt="">
+                <a href="product1.html" target="_blank">
+                <img class="top-img" src="image/women17'.jpg" alt="">
+              </a>
+                <h4>pink stylish puff coat on 30% offer with gift<i class="fa fa-heart" id="heartred"></i> </h4>
+                <div class="strikeheart">
+                </div>
+                <div class="amt">
+                  <p id="strike">$300</p>
+                  <span>$299</span>
+                  <button id="plus">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="productcard">
+              <div class="tc-container">
+                <img src="image/women15.webp" alt="">
+                <a href="product2.html">
+                <img class="top-img" src="image/women15.1.jpeg" alt="">
+              </a>
+                   <button id="btnsol">sold</button>
+                <h4>women hooded jacket in blue<i class="fa fa-heart" id="heartred"></i> </h4>
+                <div class="strikeheart">
+                </div>
+                <div class="amt">
+                  <p id="strike">$500</p>
+                  <span>$450</span>
+                  <button id="plus">+</button>
+                </div>
+              </div>
+            </div>
+          
+  
+            <div class="productcard">
+              <div class="tc-container">
+                <img src="image/women11.jpg" alt="">
+                <a href="product3.html" target="_blank">
+                <img class="top-img" src="image/women12.jpg" alt="">
+              </a>
+                <button id="btnred">hot</button>
+                <h4>women's long sleeves shirt dress<i class="fa fa-heart" id="heartred"></i> </h4>
+                <div class="strikeheart">
+                </div>
+                <div class="amt">
+                  <p id="strike">$1500</p>
+                  <span>$1000</span>
+                  <button id="plus">+</button>
+                </div>
+              </div>
+            </div>
+  
+  
+          </div>
+          <div class="whole">
+            <div class="productcard">
+              <div class="tc-container">
+                <img src="image/women10.jpg" alt="">
+                <a href="product4.html" target="_blank">
+                <img class="top-img" src="image/women10.1.jpg" alt="">
+              </a>
+                <button id="btnsol">sold</button>
+  
+  
+               <h4>chiffon wrap button detail maxi dress<i class="fa fa-heart" id="heartred"></i> </h4>
+                <div class="strikeheart">
+                </div>
+                <div class="amt">
+                  <p id="strike">$600</p>
+                  <span>$299</span>
+                  <button id="plus">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="productcard">
+              <div class="tc-container">
+                <img src="image/men-shirts.jpg" alt="">
+                <a href="product5.html" target="_blank">
+                <img class="top-img" src="image/men-shorts-1.jpg" alt="">
+              </a>
+                <button id="btnred">hot</button>
+                <h4>tra shirt and shorts<i class="fa fa-heart" id="heartred"></i> </h4>
+                <div class="strikeheart">
+                </div>
+                <div class="amt">
+                  <p id="strike">$800</p>
+                  <span>$699</span>
+                  <button id="plus">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="productcard">
+              <div class="tc-container">
+                <img src="image/women9.jpg" alt="">
+                <a href="product6.html" target="_blank">
+                <img class="top-img" src="image/women9.1.jpg" alt="">
+              </a>
+                <h4>long sleeves pullover winter knitwear<i class="fa fa-heart" id="heartred"></i> </h4>
+                <div class="strikeheart">
+                </div>
+                <div class="amt">
+                  <p id="strike">$300</p>
+                  <span>$299</span>
+                  <button id="plus">+</button>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+          <div class="whole">
+            <div class="productcard">
+              <div class="tc-container">
+                <img src="image/women8.jpg" alt="">
+                <a href="product7.html" target="_blank">
+                <img class="top-img" src="image/women8.1.jpg" alt="">
+              </a>
+                <button id="btnred">hot</button>
+  
+                <h4>hood jacket in white on 50% offer for white jacket<i class="fa fa-heart" id="heartred"></i> </h4>
+                <div class="strikeheart">
+                </div>
+                <div class="amt">
+                  <p id="strike">$500</p>
+                  <span>$420</span>
+                  <button id="plus">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="productcard">
+              <div class="tc-container">
+                <img src="image/whitecoatmen.jpg" alt="">
+                <a href="product8.html" target="_blank">
+                <img class="top-img" src="image/men-coats.jpg" alt="">
+                </a>
+                <button id="btnred">hot</button>
+  
+                <h4>men's customized wear and coat<i class="fa fa-heart" id="heartred"></i> </h4>
+                <div class="strikeheart">
+                </div>
+                <div class="amt">
+                  <p id="strike">$1600</p>
+                  <span>$1299</span>
+                  <button id="plus">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="productcard">
+              <div class="tc-container">
+                <img src="image/men12.jpg" alt="">
+                <a href="product9.html" target="_blank">
+                <img class="top-img" src="image/men-shirts.jpg" alt="">
+              </a>
+                <button id="btnsol">sold</button>
+                <h4>shorts with customized symbol<i class="fa fa-heart" id="heartred"></i> </h4>
+                <div class="strikeheart">
+                </div>
+                <div class="amt">
+                  <p id="strike">$499</p>
+                  <span>$290</span>
+                  <button id="plus">+</button>
+                </div>
+              </div>
+            </div>
+  
+  
+          </div>
+          <div class="whole">
+  
+            <div class="productcard">
+              <div class="tc-container">
+                <img src="image/women16.1.jpg" alt="">
+                <a href="product10.html" target="_blank">
+                <img class="top-img" src="image/women16.jpg" alt="">
+              </a>
+                <h4>pink stylish puff coat on 30% offer with gift<i class="fa fa-heart" id="heartred"></i> </h4>
+                <div class="strikeheart">
+                </div>
+                <div class="amt">
+                  <p id="strike">$300</p>
+                  <span>$299</span>
+                  <button id="plus">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="productcard">
+              <div class="tc-container">
+                <img src="image/women1.jpg" alt="">
+                <a href="product11.html" target="_blank">
+                <img class="top-img" src="image/women1.1.jpg" alt="">
+              </a>
+                   <button id="btnsol">sold</button>
+                <h4>women hooded jacket in blue<i class="fa fa-heart" id="heartred"></i> </h4>
+                <div class="strikeheart">
+                </div>
+                <div class="amt">
+                  <p id="strike">$500</p>
+                  <span>$450</span>
+                  <button id="plus">+</button>
+                </div>
+              </div>
+            </div>
+  
+            <div class="productcard">
+              <div class="tc-container">
+                <img src="image/women12.jpg" alt="">
+                <a href="product12.html" target="_blank">
+                <img class="top-img" src="image/women13.1.jpeg" alt="">
+              </a>
+                <button id="btnred">hot</button>
+                <h4>women's long sleeves shirt dress<i class="fa fa-heart" id="heartred"></i> </h4>
+                <div class="strikeheart">
+                </div>
+                <div class="amt">
+                  <p id="strike">$1500</p>
+                  <span>$1000</span>
+                  <button id="plus">+</button>
+                </div>
+              </div>
+            </div>
+  
+  
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="aside" class="item">
+      <h1>Type</h1>
+
+
+      <div class="radio-container">
+        <label class="container2">Activities (14)
+          <input type="radio" name="option" checked>
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Bodyfit (10)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Collection (14)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Fashion style (22)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Kids(12)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Men(10)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2"> Women(22)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <h1>Color</h1>
+        <label class="container2">Beige (3)
+          <input type="radio" name="option" checked>
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Black (1)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2"> Blue (10)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2"> Brown (4)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Grey (1)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Green (7)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2"> Pink (2)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2"> Red (3)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2"> White (10)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2"> Yellow (4)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <h1>Price</h1>
+        <label class="container2">$500 & under
+          <input type="radio" name="option" checked>
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">$500 & $999
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">$1000 & $1999
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">$2000 & $5000
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">$5000 & over
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <h1>Material</h1>
+        <label class="container2">Chiffon
+          <input type="radio" name="option" checked>
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Cotton
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Denim
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Fur & knit
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Polyster
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <h1>Size</h1>
+        <label class="container2">XS
+          <input type="radio" name="option" checked>
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">S
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">M
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">L
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">XL
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">2XL
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Free Size
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <h1>Pattern&Textures</h1>
+        <label class="container2">Floral (4)
+          <input type="radio" name="option" checked>
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Logo (10)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Patterened (6)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Solid (31)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container2">Textured (11)
+          <input type="radio" name="option">
+          <span class="checkmark"></span>
+        </label>
+        
+      </div>
+    </div>
+
+  </div>
+  <section class="footer">
+
+    <div class="container10">
+      <div class="row10">
+        <div class="aboutweb">
+          <h3>noon’i</h3>
+          <p>
+            A108 Adam Street <br>
+            New York, NY 535022<br>
+            United States <br> <br>
+            <strong>Phone:</strong> +1 5589 55488 55<br>
+            <strong>Email:</strong> noon’i@example.com<br>
+          </p>
+        </div>
+  
+  
+        <ul>
+          <h4>Useful Links</h4>
+          <li><a href="#"><span>&#x3e;</span> Home</a></li>
+          <li><a href="#"><span>&#x3e;</span> About us</a></li>
+          <li><a href="#"><span>&#x3e;</span> Services</a></li>
+          <li><a href="#"><span>&#x3e;</span> Terms of service</a></li>
+          <li><a href="#"><span>&#x3e;</span> Privacy policy</a></li>
+        </ul>
+  
+  
+        <ul>
+          <h4>Our Services</h4>
+          <li><a href="#"><span>&#x3e;</span> Web Design</a></li>
+          <li><a href="#"><span>&#x3e;</span> Web Development</a></li>
+          <li><a href="#"><span>&#x3e;</span> Product Management</a></li>
+          <li><a href="#"><span>&#x3e;</span> Marketing</a></li>
+          <li><a href="#"><span>&#x3e;</span> Graphic Design</a></li>
+        </ul>
+  
+        <div class="social-content">
+          <h4>Our Social Networks</h4>
+          <p>Cras fermentum odio eu feugiat <br>
+            lide par naso tierra videa magna <br>
+            derita valies</p>
+          <div class="social-links ">
+            <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i> </a>
+            <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i> </a>
+            <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="google-plus"><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href="#" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+  
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+  </section>
+  
+  <section class="footer-botom">
+    <div class="container11">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Arsha</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+  
+        Designed by <a href="#">nifra coder</a>
+      </div>
+  
+  </section>
+  
+  
+
+
+</body>
+
+</html>
