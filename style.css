@@ -7,14 +7,87 @@
 body{
     font-family: 'poppins', sans-serif;
 }
-/* Start of navbar */
+/*-------------------------------------------- pop up page for search bar ----------------------------------------------*/
+.mag input{
+    height: 7px;
+    width: 176px;
+    cursor: pointer;
+    position: relative;
+    opacity: 0;
+}
+
+.popup{
+    position: absolute;
+    top: -2em;
+    right: -4em;
+    width: 300px;
+    height: 700px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-around;
+    /* padding: 2em; */
+     color: white;
+    border-radius: 10px;
+    z-index: 10;
+    clip-path: polygon(0 50%, 100% 50%, 100% 50%,0 50% );
+    transition: .4s ;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.096);
+
+}
+/* .popup .sear{
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    top: 87px;
+} */
+.popup p{
+  
+        color: black;
+        position: absolute;
+        top: 54px;
+   
+}
+
+label {
+    font-size: 25px;
+    color: #5a5959;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 5px;
+    right: 1em;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input:checked ~ .popup{
+    clip-path: polygon(0 0,100% 0, 100% 100%, 0 100%);
+}
+#mag {
+    position: absolute;
+    left: 97px;
+    font-size: 20px;
+    color: rgb(90, 88, 88);
+    cursor: pointer;
+}
+#mag{
+    position: relative;
+}
+.mag {
+    position: absolute;
+    right: 4em;
+}
+/* -----------------------------------------------End of search section----------------------------------------------- */
+
+
+/* ------------------------------------------------Start of navbar----------------------------------------------------- */
 .log {
     text-decoration: none;
     color:rgba(0,0,0,1);
     margin-left: 40px;
-    font-size: 40px;
+    font-size: 48px;
     margin-right: 3em;
-    font-weight: 300;
+    font-weight: 200;
 }
 #whatsapp{
     position: fixed;
@@ -34,7 +107,8 @@ a {
 nav {
     max-width: 100%;
     margin: auto;
-    padding: 2rem 1rem;
+    /* padding: 2rem 1rem; */
+    height: 136px;
     display: flex;
     align-items: center;
     margin-top: -16px;
@@ -52,6 +126,11 @@ nav {
     
 
 }
+.nav__attachment h1{
+    display: none;
+    font-size: 30px;
+    font-weight: 300;
+}
 
 
 
@@ -65,7 +144,7 @@ nav {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 2.5em;
+    gap: 2.1em;
 }
 
 .link a {
@@ -78,6 +157,7 @@ nav {
 .link a i{
     color:rgb(36, 35, 35) ;
     font-size: 15px;
+    padding: 8px;
 }
 
 
@@ -90,19 +170,10 @@ nav {
     color: rgb(160, 152, 152);
 
 }
-#search{
-   background-color: rgb(245, 247, 250);
-    border: none;
-    border-bottom: 1px solid black;
-    position: relative;
-    right: -59px;
-    height: 23px;
-    cursor: pointer;
-    font-size: 17px;
-    display: none;
-}
+
 #cart{
     position: absolute;
+    cursor: pointer;
     top: 40px;
     right: 26px;
     font-size: 22px;
@@ -120,17 +191,7 @@ nav {
 
 }
 
-#mag{
-    position: absolute;
-    top: 40px;
-    right: 153px;
-    font-size: 20px;
-    color: rgb(90, 88, 88);
-    cursor: pointer;
-    
-   
 
-}
 #user{
     position: absolute;
     top: 39px;
@@ -150,28 +211,24 @@ nav {
 }
 hr{
     position: relative;
-    bottom: 91px;
+    bottom: 70px;
     right: 61px;
     width: 615px;
 }
 .container {
-    display: flex; /* Enables flexbox */
-    /* justify-content: space-between; Spreads the children apart */
-    /* flex-wrap: wrap; Allows items to wrap onto the next line */
-    /* margin-bottom:30em ; */
+    display: grid;
+    grid-template-columns: repeat(2,auto);
     background-color: #c0c7f1;
     height: 600px;
 }
-/* .container:hover{
-     border: 6px solid  #9eaaf1 ;
-} */
+
 
 .content {
-    width: 48%; /* Each child takes up close to half the container's width */
-    padding: 20px; /* Adds some spacing inside the content blocks */
+    /* width: 48%; Each child takes up close to half the container's width */
+    /* padding: 20px; Adds some spacing inside the content blocks */
 }
 .leftcontent h1{
-    font-size: 56px;
+    font-size: 67px;
     color: rgb(10, 10, 10);
     font-weight: 700;
     margin: 2em;
@@ -204,30 +261,31 @@ hr{
 
   #head2{
     position: relative;
-    bottom: 82px;
+    bottom: 62px;
     right: 40px;
+    width: 600px; 
   }
   
 
 
-  /* Media Query for screens that are 900px wide or less */
+  /* Media Query for screens that are 900px wide or less
   @media (max-width: 900px) {
     .content {
-      width: 100%; /* Each child takes full width of the container */
-      margin-bottom: 20px; /* Adds more space between stacked items */
+      width: 100%; Each child takes full width of the container
+      margin-bottom: 20px; Adds more space between stacked items
     }
 
     .container {
-      justify-content: center; /* Aligns items centrally in the container */
+      justify-content: center; Aligns items centrally in the container
     }
   }
 
-  /* Additional Media Query for screens that are 600px wide or less */
+  Additional Media Query for screens that are 600px wide or less
   @media (max-width: 600px) {
     .content {
-      margin-bottom: 10px; /* Less space than at 900px, adjusting for smaller screens */
+      margin-bottom: 10px; Less space than at 900px, adjusting for smaller screens
     }
-  }
+  } */
 /* start of about us */
 #about{
     margin-bottom: 4em;
@@ -259,7 +317,6 @@ hr{
 }
 .gallery h1{
     margin-left: 1.5em;
-    padding-top: 2em;
     font-size: 25px;
     font-weight: 400;
     color: #011d38;
@@ -298,6 +355,7 @@ hr{
     height: 400px;
     margin-top: 2em;
     margin-bottom: 4em;
+    border: 2px solid grey;
 
 
 }
@@ -373,11 +431,7 @@ hr{
 
 /* START OF BANNER*/
 
-.bannerimg img{
 
-    border:10px solid rgb(7, 7, 7);
-    
-}
 .bannerimg h4{
    font-size: 25px;
    font-weight: 500;
@@ -385,7 +439,7 @@ hr{
    display: inline-block;
    bottom: 272px;
    left: 65px;
-   color: rgb(0, 0, 0);
+   color: rgb(255, 255, 255);
    letter-spacing: 1rem;
 }
 .bannerimg h1{
@@ -395,7 +449,7 @@ hr{
    display: inline-block;
    bottom: 204px;
    left: -331px;
-   color: rgb(0, 0, 0);
+   color: rgb(255, 255, 255);
 }
 /* START OF BEST SELLER */
 .bestsellers{
@@ -967,6 +1021,7 @@ border-radius: 20px;
     margin-top: 5px;
     margin-left: -15px;
     opacity: 1;
+    z-index: 100;
 }
 .nav__bar ul li:hover .sub__menu1 ul{
     display: block;
