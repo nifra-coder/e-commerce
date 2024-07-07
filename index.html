@@ -7,7 +7,7 @@
   <title>noon’i-explore you’r choice.</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="media.css">
-  <link rel="icon" href="logo.png">
+  <link rel="icon" href="image/logooo.png">
   <link rel="stylesheet" href="seeallproduct.html">
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -16,7 +16,20 @@
 </head>
 
 <body>
+  
+  <div id="preloader">
+    <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <h2>Loading...</h2>
+</div>
+<!-- <div id="content">
+</div> -->
   <!-------------------------------------------------Start of nav section--------------------------------------------->
+ 
   <header class="nav__attachment">
     <h1>noon’i</h1>
 
@@ -26,8 +39,8 @@
         <li class="log">noon’i</li>
         <li class="link"><a href="#home">Home</a></li>
         <li class="link"><a href="#about">About</a></li>
-        <li class="link"><a href="#blog">Blog<i class="fa-solid fa-angle-down"></i></a>
-          <div class="sub__menu1">
+        <li class="link"><a href="seeallproduct.html">Shop</a>
+          <!-- <div class="sub__menu1">
             <ul>
               <li><a href="#">blog default</a></li>
               <li><a href="#">blog mansory</a></li>
@@ -35,11 +48,11 @@
               <li><a href="#">blog video</a></li>
               <li><a href="#">blog parallex</a></li>
             </ul>
-          </div>
+          </div> -->
         </li>
-        <li class="link"><a href="#porfolio">protofolio</a></li>
+        <li class="link"><a href="portfolio.html">protofolio</a></li>
         <li class="link"><a href="#team">Team</a></li>
-        <li class="link"><a href="#dropdown">Dropdown</a></li>
+        <li class="link"><a href="#service">Service</a></li>
         <li class="link"><a href="#contact us">contact us<i class="fa-solid fa-angle-down"></i></a>
           <div class="sub__menu1">
             <ul>
@@ -49,15 +62,17 @@
           </div>
         </li>
       </ul>
+      <!-- navv barr -->
+      
       <!------------------------------------------------ start of search ---------------------------------------------->
       <div class="mag">
         <i class="fa fa-magnifying-glass" id="mag"></i>
-        <input type="checkbox" id="btn">
+        <input class="barrsear" type="checkbox" id="btn">
         <div class="popup">
           <p>search for product(0):</p>
           <br>
           <input type="search" name="" id="" class="sear" placeholder=" search your choice ">
-          <label for="btn"><i class="fa-solid fa-xmark"></i></label>
+          <label  id="wrong" for="btn"><i class="fa-solid fa-xmark"></i></label>
       </div>
       </div>
       <!------------------------------------------------- end of search bar -------------------------------------------->
@@ -77,30 +92,67 @@
       </div>
       <!------------------------------------------------End of user section---------------------------------------------->
     </nav>
-    <i id="whatsapp" class="fa-brands fa-whatsapp"></i>
+    <div class="fixedatt">
+    <div class="attached">
+      <i class="fa-regular fa-message" id="mess"></i>
+      <input class="barrsear1" type="checkbox" id="btn1">
+      <div class="popup1">
+        <div class="connect">
+          <div class="ins">
+        <i class="fa-brands fa-instagram" id="instaagramm"></i>
+        <p>Instagram</p>
+      </div>
+      <div class="what">
+        <i class="fa-brands fa-whatsapp" id="whatsaaap"></i>
+        <p>whatsapp</p>
+      </div>
+      </div>
+      <div class="connect1">
+
+      <div class="ph">
+        <i class="fa-solid fa-phone" id="pcall"></i>
+        <p>call</p>
+        </div>
+        <div class="faph">
+          <i class="fa-regular fa-envelope" id="facec"></i>
+          <p>Email</p>
+      </div>
+      </div>
+        <label  id="wrong1" for="btn1"><i class="fa-solid fa-xmark"></i></label>
+    </div>
+    </div>
+  </div>
   </header>
   <!----------------------------------------------------- End of nav section ------------------------------------------->
   <marquee bgcolor="yellow" direction="right"
-    style="color: white; background-color: black !important; font-size: 20px; position: absolute;">
+    style="color: white; background-color: black !important; font-size: 20px; position: absolute; z-index: 11;">
     <font>50% offer sale on you’r 1st
-      order🥳&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get
+      order&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get
       exiciting gifts on each
-      order🤩&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hurry
-      up!🤗</font>
+      order&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hurry
+      up!</font>
   </marquee>
 
   <!-- start of home section -->
   <section id="home">
     <div class="container">
-      <div class="content leftcontent">
-        <h1>EXPLORE YOUR CHOICE WITH noon’i</h1>
-        <h4>Shop Now</h4>
-        <!-- <h2>.<span>.</span>..</h2> -->
+      <div class="content leftcontent fade-in">
+        <h1>EXPLORE <span>YOUR CHOICE</span> WITH noon’<span>i</span></h1>
+       
+      
+      <div class="type">
+        <h2>
+          EXPLORE YOU'RE
+        
+            <span> CHOICE</span><span> FASHION</span><span>LOOK</span>
+        </h2>
+      
       </div>
+    </div>
       <div class="content rightcontent">
         <!-- <img id="head1" src="head1.png" alt="" style="width: 570px; "> -->
         <img id="head2" src="image/head2.png" alt="">
-        <hr>
+        <!-- <hr> -->
       </div>
     </div>
   </section>
@@ -115,45 +167,200 @@
 
   </section>
   <!-- end of about section -->
-  <section class="gallery" id="shop">
+   <!-- Radio buttons and labels within a parent container -->
+    <div class="radcontainer" id="well">
+        <div class="ll">
 
-    <h1><span class="line">All</span><span>Women</span><span>Men</span><span>Kids</span> <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
-          class="fa-solid fa-plus"></i>--> </h1>
+            <input class="checker" type="radio" id="radio1" name="box-toggle" checked>
+            <label for="radio1" class="radio-label">All</label>
 
-    <div class="photo shop">
-      <div class="borderimg">
-        <a href="seeallproduct.html">
-          <img src="image/women2.2.jpg" alt="">
-        </a>
-        <h3 id="dr">Coats</h3>
-        <a href="seeallproduct.html">
-          <img src="image/headwomen1.jpg" alt="">
-        </a>
-        <h3 id="dr1">Hoodie</h3>
-        <a href="seeallproduct.html">
-          <img src="image/headwomen2.jpg" alt="">
-        </a>
-        <h3 id="dr2">Jeans</h3>
+            <input class="checker" type="radio" id="radio2" name="box-toggle">
+            <label for="radio2" class="radio-label">Women</label>
 
+            <input class="checker" type="radio" id="radio3" name="box-toggle">
+            <label for="radio3" class="radio-label">men</label>
 
-      </div>
-      <div class="borderimg">
-        <a href="seeallproduct.html">
-          <img src="image/men-shorts-1.jpg" alt="">
-        </a>
-        <h3 id="dr3">shorts</h3>
-        <a href="seeallproduct.html">
-          <img src="image/men-shirts.jpg" alt="">
-        </a>
-        <h3 id="dr4">shirts</h3>
-        <a href="seeallproduct.html">
-          <img src="image/men-coats.jpg" alt="">
-        </a>
-        <h3 id="dr5">coats</h3>
+            <div class="content">
+                <div class="box box1">
+                    <div class="conn">
 
-      </div>
+                        <div class="optionedcontainer">
+                            <img src="image/headwomen2.jpg" alt="">
+                            <div class="captionop">
+
+                                <h1>women jeans</h1>
+                              <p>Choose your chioice</p>
+                              <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="optionedcontainer">
+                            <img src="image/headwomen1.jpg" alt="">
+                            <div class="captionop">
+                                <h1>women hoodies</h1>
+                              <p>Choose your chioice</p>
+                              <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+
+                            </div>
+                        </div><div class="optionedcontainer">
+                            <img src="image/headwomen4.jpg" alt="">
+                            <div class="captionop">
+                                <h1>Women T-shirts</h1>
+                              <p>Choose your chioice</p>
+                              <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="conn">
+                        <div class="optionedcontainer">
+                            <img src="image/men12.jpg" alt="">
+                            <div class="captionop">
+                                <h1>hoodie t-shirts</h1>
+                                <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="optionedcontainer">
+                            <img src="image/men-shirts.jpg" alt="">
+                            <div class="captionop">
+                              <h1>linen shirts</h1>
+                              <p>Choose your chioice</p>
+                                <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="optionedcontainer">
+                            <img src="image/women20.webp" alt="">
+                            <div class="captionop">
+                              <h1>women sweaters</h1>
+                              <p>Choose your chioice</p>
+                                <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box2">
+                    <div class="conn">
+
+                        <div class="optionedcontainer">
+                            <img src="image/women12.jpg" alt="">
+                            <div class="captionop">
+                              <h1>flower tops</h1>
+                              <p>Choose your chioice</p>
+                              <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="optionedcontainer">
+                            <img src="image/headwomen34.webp" alt="">
+                            <div class="captionop">
+                              <h1>solid loose pleats </h1>
+                              <p>Choose your chioice</p>
+                              <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                            </div>
+                        </div><div class="optionedcontainer">
+                            <img src="image/headwomen4.jpg" alt="">
+                            <div class="captionop">
+                              <h1>Women T-shirts</h1>
+                              <p>Choose your chioice</p>
+                              <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="conn">
+                        <div class="optionedcontainer">
+                            <img src="image/women123.jpeg" alt="">
+                            <div class="captionop">
+                                <h1>modern tops</h1>
+                              <p>Choose your chioice</p>
+                              <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="optionedcontainer">
+                            <img src="image/women44.webp" alt="">
+                            <div class="captionop">
+                                <h1>long loose pants</h1>
+                              <p>Choose your chioice</p>
+                              <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="optionedcontainer">
+                            <img src="image/headwomen1.jpg" alt="">
+                            <div class="captionop">
+                                <h1>women hoodie</h1>
+                              <p>Choose your chioice</p>
+                              <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="box box3">
+                  <div class="conn">
+                      <div class="optionedcontainer">
+                          <img src="image/headmen4.webp" alt="">
+                          <div class="captionop">
+                              <h1>Branded watches</h1>
+                              <p>Choose your chioice</p>
+                              <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                          </div>
+                      </div>
+                      <div class="optionedcontainer">
+                          <img src="image/head45.jpg" alt="">
+                          <div class="captionop">
+                              <h1>Ice silk shirt</h1>
+                              <p>choose your chioice</p>
+                              <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                              
+                          </div>
+                      </div>
+                      <div class="optionedcontainer">
+                          <img src="image/men-shirts.jpg" alt="">
+                          <div class="captionop">
+                              <h1>linen shirts</h1>
+                              <p>choose your chioice</p>
+                              <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="conn">
+
+                    <div class="optionedcontainer">
+                        <img src="image/headmen16.jpg" alt="">
+                        <div class="captionop">
+                            <h1>bossy t-shirt</h1>
+                            <p>choose your chioice</p>
+                            <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                        </div>
+              
+                    </div>
+                    <div class="optionedcontainer">
+                        <img src="image/menhead88.webp" alt="">
+                        <div class="captionop">
+                            <h1>pajamas</h1>
+                            <p>choose your chioice</p>
+                            <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                        </div>
+                    </div><div class="optionedcontainer">
+                        <img src="image/headmen5.jpg" alt="">
+                        <div class="captionop">
+                            <h1>pendent</h1>
+                            <p>choose your chioice</p>
+                            <a href="seeallproduct.html"><i class="fa-solid fa-link"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Container for boxes -->
+
     </div>
-  </section>
+
   <!-- end gallery section -->
   <section class="brand" id="brand">
     <div class="brandimg">
@@ -167,7 +374,7 @@
 
   <section class="banner1">
     <div class="bannerimg">
-      <img src="image/jennie.jpg" alt="" style="width: 100%; height: 500px;">
+      <img src="image/jennie.jpg" alt="" style="width: 100%; ">
       <h4>NEW PRODUCTS</h4>
       <h1>Up To 40% Off
         Jackets Coats </h1>
@@ -178,10 +385,9 @@
 
   <section class="bestsellers">
     <div class="sectionheader">
-      <h1 class="selected">BEST SELLERS</h1>
-      <h1 class="selects">NEW PRODUCT</h1>
-      <p><a href="seeallproduct.html">see all<i class="fa-solid fa-angles-right" id="angle-right"></i></a></p>
-    </div>
+      <h1 class="selected">BEST SELLERS <i class="fa-solid fa-angle-right"></i></h1>
+      <h1 class="selects">NEW PRODUCT <i class="fa-solid fa-angle-right"></i></h1>
+  </div>
     <div class="bestsell">
       <div class="whole">
 
@@ -428,8 +634,10 @@
   </section>
   <!-- end of instagram section -->
   <!-- start of service sectyion -->
-  <section class="service" id="service">
+  <!-- <section class="service" id="service">
+    <H1>why people choose us...</H1>
     <div class="wholeservice">
+      
       <div class="delivery">
         <i class="fa-solid fa-truck-fast"></i>
         <h2>Free shipping</h2>
@@ -452,7 +660,78 @@
       </div>
 
     </div>
-  </section>
+  </section> -->
+  <div class="headdser">
+    <h1>Why people choose us</h1>
+</div>
+    <section class="services">
+        <div class="service-card">
+            <div class="service-content">
+                <div class="service-front">
+                    <img src="image/women123.jpeg" alt="Personal Styling" class="service-image">
+                    <h2>Personal Styling</h2>
+                </div>
+                <div class="service-back">
+                    <img src="image/blogimg.jpg" alt=" " style="height: 700px;">
+                </div>
+            </div>
+        </div>
+        <div class="service-card">
+            <div class="service-content">
+                <div class="service-front">
+                    <img src="image/women20.webp" alt="Custom Tailoring" class="service-image">
+                    <h2>Custom Tailoring</h2>
+                </div>
+                <div class="service-back">
+                    <img src="image/custtt.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="service-card">
+            <div class="service-content">
+                <div class="service-front">
+                    <img src="image/wardrobe.jpeg" alt="Wardrobe Makeover" class="service-image">
+                    <h2>Wardrobe Makeover</h2>
+                </div>
+                <div class="service-back">
+                    <img src="image/personnel_styling.avif" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="service-card">
+            <div class="service-content">
+                <div class="service-front">
+                    <img src="image/women17.1.jpg" alt="Fashion Consulting" class="service-image">
+                    <h2>Fashion Consulting</h2>
+                </div>
+                <div class="service-back">
+                    <p>Fashion consulting talk to our expert</p>
+                </div>
+            </div>
+        </div>
+        <div class="service-card">
+            <div class="service-content">
+                <div class="service-front">
+                    <img src="image/women13.1.jpeg" alt="Personal Shopping" class="service-image">
+                    <h2>Personal Shopping</h2>
+                </div>
+                <div class="service-back">
+                    <img src="image/personnel shop.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="service-card">
+            <div class="service-content">
+                <div class="service-front">
+                    <img src="image/women16.jpg" alt="Style Workshops" class="service-image">
+                    <h2>Style Workshops</h2>
+                </div>
+                <div class="service-back">
+                    <img src="image/workshop.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
   <!-- End of service -->
 
   <!-- Start of  Feedback section-->
@@ -563,6 +842,17 @@
 
 
 
+
+
+<script>
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+        document.body.classList.add('loaded');
+        document.body.style.overflow = 'auto'; // Enable scrolling after the content is loaded
+    }, 3000); // Wait for 5 seconds (5000 milliseconds)
+});
+
+</script>
 
 </body>
 
