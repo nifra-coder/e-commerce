@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <title>noon’i-portfolio</title>
     <style>
-         * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -101,77 +103,615 @@
             left: 53px;
             color: #323131;
         }
-        .container {
-        display: flex;
-        justify-content: space-evenly;
-        margin-bottom: 3em;
-        }
-        .container01{
+
+
+        .container01 {
             text-align: center;
             margin-top: 2em;
-        margin-bottom: 3em;
+            margin-bottom: 3em;
 
         }
-        .container01 h1{
+
+        .container01 h1 {
             color: rgb(180, 178, 178);
             font-weight: 300;
-            font-size: 25px;
+            font-size: 22px;
+        }
+
+        .container {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 320px);
+
+
         }
 
 
 
-    </style>
+        #box1 {
+            border: 2px solid rgb(250, 247, 247);
+            /* background-color: rgb(172, 169, 169); */
+            /* display: flex;
+            gap: 10px; */
+
+        }
+
+
+        #box {
+
+            /* display: flex;
+            gap: 10px; */
+
+        }
+
+
+        .item1 {
+
+            grid-column: 1 / 4;
+            /*--------------short cut method*/
+            grid-row: 1 / 1;
+
+        }
+
+
+
+        .item1 img {
+            width: 387px;
+
+        }
+
+        .item2 {
+            grid-row: 1 / 3;
+            position: relative;
+
+        }
+
+        .item2 img {
+            height: 633px;
+            width: 500px;
+        }
+
+        .item3 img {
+            width: 449px;
+            height: 315px;
+        }
+
+        .item12 img {
+            width: 450px;
+            height: 633px;
+        }
+
+        .item11 img {
+            height: 633px;
+            width: 498px;
+            filter: blur(2px);
+            z-index: 0;
+        }
+
+        .item16 img {
+            width: 370px;
+            height: 400px;
+            position: absolute;
+            bottom: 24em;
+            left: 28em;
+            margin-bottom: 3em;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .item16 {
+            z-index: 1;
+
+        }
+
+        /* footer section */
+        .footer {
+            height: 350px;
+            background-color: #181616;
+            color: white;
+        }
+
+        .row10 {
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 3em;
+        }
+
+        .container10 {
+            margin: 0em 7em 0px 7em;
+        }
+
+        .row10 ul li a {
+
+            text-decoration: none;
+            color: rgb(250, 245, 245);
+            font-size: 14px;
+
+        }
+
+        .row10 ul li a span {
+            color: #070707;
+            font-weight: 500;
+            font-size: 20px;
+        }
+
+        .row10 ul li {
+            list-style: none;
+            padding-bottom: 5px;
+        }
+
+        .aboutweb p {
+            font-size: 15px;
+            color: white;
+
+        }
+
+        .aboutweb p strong {
+            color: #f0f5f5;
+            font-size: 18px;
+
+        }
+
+        .aboutweb h3 {
+            font-weight: 300;
+            font-size: 36px;
+            letter-spacing: 5px;
+            color: #fafafa;
+            text-transform: lowercase;
+        }
+
+        .row10 ul h4 {
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: #f5f5f5;
+        }
+
+        .social-content h4 {
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+
+        .social-links a i {
+            color: #f5f5f5;
+            font-size: 30px;
+            margin: 6px;
+        }
+
+        /* footer-bottom */
+        .footer-botom {
+            background-color: #080808;
+            color: white;
+            height: 70px;
+
+
+        }
+
+        .container11 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .copyright {
+            margin-top: 2em;
+            margin-left: 4em;
+            color: #ced0d3;
+
+        }
+
+        .credits {
+            margin-top: 2em;
+            color: #ced0d3;
+            margin-right: 4em;
+            /* font-size: 10px; */
+
+        }
+
+        .credits a {
+            text-decoration: none;
+            color: #edeff0;
+
+        }
+
+        .bdbtn a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .content img {
+            width: 500px;
+            height: 500px;
+        }
+
+        .container01 {
+            text-align: center;
+            margin-top: 2em;
+            margin-bottom: 3em;
+
+        }
+
+        .container01 h1 {
+            color: rgb(180, 178, 178);
+            font-weight: 300;
+            font-size: 22px;
+        }
+
+
+        /* hover */
+        .container001 {
+            display: flex;
+            width: 100%;
+            padding: 1% 10px;
+            box-sizing: border-box;
+            height: 100vh;
+            /* border: 2px solid black; */
+        }
+
+        .box01 {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, .1);
+            line-height: 0;
+        }
+
+        .box01>img {
+            width: 200%;
+            height: calc(100% - 5vh);
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box01>span {
+            font-size: 20px;
+            display: block;
+            text-align: center;
+            height: 5vh;
+            line-height: 1.5;
+        }
+
+        .box01:hover {
+            flex: 1 1 30%;
+        }
+
+        .box01:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+        .headd1{
+            text-align: center;
+        }
+
+        .headd1 h1 {
+            font-size: 48px;
+            font-weight: 400;
+            margin: 0;
+            color: #1c1b1b;
+            padding: 20px;
+            position: relative;
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+
+        .headd1 h1::before,
+        .headd1 h1::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 80%;
+            border: 2px solid #444;
+            top: 0;
+            left: 0;
+            transition: transform 0.6s ease-out;
+        }
+
+        .headd1 h1::before {
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+
+        .headd1 h1::after {
+            transform: scaleY(0);
+            transform-origin: top;
+        }
+
+        .headd1 h1:hover::before {
+            transform: scaleX(1);
+        }
+
+        .headd1 h1:hover::after {
+            transform: scaleY(1);
+        }
+
+        .headd1 h2 {
+            font-size: 16px;
+            font-weight: 300;
+            width: 70%;
+            margin: 0 auto;
+            /* padding: 20px; */
+            text-align: center;
+            padding: 0px 0px 20px 0px;
+        }
+
+        /* --------------------------------------------head-footer---------------------------------------------------- */
+        .head-footer{
+            display: grid;
+            grid-template-columns: 3fr 5fr ;
+          /* grid-gap:1em; */
+          
+        }
+        #box-footer{
+            border: 2px solid black;
+            background-color: #181616;
+            padding: 30px;
+        }
+/* preloader */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* Fade-out effect for the preloader */
+}
+
+.loader {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: #000000;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite alternate;
+}
+
+.circle:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.circle:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.circle:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+    to {
+        transform: translateY(-50px);
+    }
+}
+
+h2 {
+    color: #070707;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+#content {
+    display: none; /* Hide content initially */
+    padding: 20px;
+}
+
+body.loaded #preloader {
+    opacity: 0; /* Hide the preloader */
+    pointer-events: none; /* Prevent interaction with the preloader */
+}
+
+body.loaded #content {
+    display: block; /* Show content when loaded */
+}
+
+  </style>
 </head>
+
 <body>
+  <div id="preloader">
+    <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <h2>Loading...</h2>
+</div>
+    
+
     <header class="nav__attachment">
 
         <nav class="nav__bar">
             <i class="fa fa-bars"></i>
-    
-          <ul class="nav__links">
-            <li class="log">noon’i</li>
-          </ul>
-          <div class="mag">
-            <i class="fa fa-magnifying-glass" id="mag"></i>
-          </div>
-    
-          <div class="cart">
-            <i class="fa fa-cart-shopping" id="cart"></i>
-            <i class="fa fa-heart" id="heart"></i>
-            <i class="fa fa-circle-user" id="user"></i>
-          </div>
-    
-          <!-- <button class="btn">Get started</button> -->
-        </nav>
-      </header>
-      <hr>
-      <section class="head1">
-        <div class="container01">
-            <h1>Home/Portfolio</h1>
-            <h1>Portfolio</h1>
-        </div>
-      </section>
-      <section class="portfolio">
-        <div class="container">
-            <img src="image/port.avif" alt="">
-            <img src="image/portfolio hat.avif" alt="">
-        </div>
-        <div class="container">
-            <img src="image/portfoliobag.avif" alt="">
-            <img src="image/portfoliocloset.avif" alt="">
-            
-        </div>
-        <div class="container">
 
-        <img src="image/portfolio modell.avif" alt="">
-        <img src="image/portfoliomodel2.avif" alt="">
+            <ul class="nav__links">
+                <li class="log">noon’i</li>
+            </ul>
+            <div class="mag">
+                <i class="fa fa-magnifying-glass" id="mag"></i>
+            </div>
+
+            <div class="cart">
+                <i class="fa fa-cart-shopping" id="cart"></i>
+                <i class="fa fa-heart" id="heart"></i>
+                <i class="fa fa-circle-user" id="user"></i>
+            </div>
+
+        </nav>
+    </header>
+    <hr>
+    <section class="head1">
+        <div class="container01">
+            <h1>Home/Portfolio</h1image />
+                <h1>Portfolio</h1>
+        </div>
+    </section>
+
+    <div class="headd1">
+        <h1>Fashion canvas</h1>
+        <h2>
+            Backed by nearly twenty years of experience in apparel sampling and pattern cutting, we've proudly
+            represented numerous brands in their digital product development.
+
+        </h2>
     </div>
     <div class="container">
-        <img src="image/portfoliomodel.avif" alt="">
-    </div>
 
+        <div id="box1" class="item1"><img src="image/portfirst.jpg" alt="" style="width: 386px; height: 314px;"></div>
+        <div id="box1" class="item2"><img src="image/portfolio hat.avif" alt=""></div>
+        <div id="box1" class="item3"><img src="image/portimm.jpg" alt=""></div>
+        <div id="box1" class="item4"><img src="image/portfolioimgg.jpeg" alt="" style="width: 152px;height: 313px;">
+        </div>
+        <div id="box1" class="item5"><img src="image/portfolio12.jpg" alt="" style="height: 313px; width: 230px;"></div>
+        <div id="box" class="item6"><img src="image/" alt=""></div>
+        <div id="box1" class="item7"> <img src="image/portfolioha.avif" alt="" style="width: 450px; height: 313px;">
+        </div>
+        <div id="box1" class="item8"> <img src="image/portfolio02.jpg" alt="" style="width: 152px; height: 313px;">
+        </div>
+        <div id="box1" class="item9"> <img src="image/portfolioooo.jpg" alt="" style="width: 230px; height: 313px;">
+        </div>
+        <div id="box" class="item10"></div>
+        <div id="box1" class="item11"> <img src="image/portfoliomodel.avif" alt=""></div>
+        <div id="box1" class="item12"> <img src="image/portfoliobag.avif" alt=""></div>
+        <div id="box1" class="item13"> <img src="image/port03.jpg" alt="" style="width:152px; height:313px ;"></div>
+        <div id="box1" class="item14"><img src="image/port04.jpg" alt="" style="width: 230px; height: 313px;"></div>
+        <div id="box" class="item15"></div>
+        <div id="box" class="item16"><img src="image/portfoliomodel.avif" alt=""></div>
+        <div id="box" class="item17"></div>
+        <div id="box1" class="item18"><img src="image/portfoliodress.jpg" alt="" style="width: 152px; height: 313px;">
+        </div>
+        <div id="box1" class="item19"><img src="image/portend.jpg" alt="" style="width: 229px; height: 313px;"></div>
+        <div id="box" class="item20"> <img src="image/" alt=""></div>
+        <div id="box" class="item21"> <img src="image/portvall.jpg" alt="" style="width: 500px;
+            height: 315px;"></div>
+        <div class="box item22"><img src="image/porttfoo.jpg" alt="" style="width: 452px;
+            height: 315px;"></div>
+
+    </div>
+<div class="wrapper" style="height: 750px;">
+    <div class="container001">
+        <div class="box01">
+            <img src="image/portfolio modell.avif">
+            <span>women</span>
+        </div>
+        <div class="box01">
+            <img src="image/black men.jpg">
+            <span>men</span>
+        </div>
+        <div class="box01">
+            <img src="image/portfoliomodel2.avif">
+            <span>models</span>
+        </div>
+        <div class="box01">
+            <img src="image/kids.webp">
+            <span>Kid</span>
+        </div>
+        <div class="box01">
+            <img src="image/toiloringgg.jpg">
+            <span>toiloring</span>
+        </div>
+        <div class="box01">
+            <img src="image/designers.jpg">
+            <span>Designer</span>
+        </div>
+        <div class="box01">
+            <img src="image/quality1.webp">
+            <span>qualityClothes</span>
+        </div>
+    </div>
+</div>
+   
+   
+    <section class="footer">
+
+        <div class="container10">
+            <div class="row10">
+                <div class="aboutweb">
+                    <h3>noon’i</h3>
+                    <p>
+                        A108 Adam Street <br>
+                        New York, NY 535022<br>
+                        United States <br> <br>
+                        <strong>Phone:</strong> +1 5589 55488 55<br>
+                        <strong>Email:</strong> noon’i@example.com<br>
+                    </p>
+                </div>
+
+
+                <ul>
+                    <h4>Useful Links</h4>
+                    <li><a href="#"><span>&#x3e;</span> Home</a></li>
+                    <li><a href="#"><span>&#x3e;</span> About us</a></li>
+                    <li><a href="#"><span>&#x3e;</span> Services</a></li>
+                    <li><a href="#"><span>&#x3e;</span> Terms of service</a></li>
+                    <li><a href="#"><span>&#x3e;</span> Privacy policy</a></li>
+                </ul>
+
+
+                <ul>
+                    <h4>Our Services</h4>
+                    <li><a href="#"><span>&#x3e;</span> Web Design</a></li>
+                    <li><a href="#"><span>&#x3e;</span> Web Development</a></li>
+                    <li><a href="#"><span>&#x3e;</span> Product Management</a></li>
+                    <li><a href="#"><span>&#x3e;</span> Marketing</a></li>
+                    <li><a href="#"><span>&#x3e;</span> Graphic Design</a></li>
+                </ul>
+
+                <div class="social-content">
+                    <h4>Our Social Networks</h4>
+                    <p>Cras fermentum odio eu feugiat <br>
+                        lide par naso tierra videa magna <br>
+                        derita valies</p>
+                    <div class="social-links ">
+                        <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i> </a>
+                        <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i> </a>
+                        <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="google-plus"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
     </section>
+
+    <section class="footer-botom">
+        <div class="container11">
+            <div class="copyright">
+                &copy; Copyright <strong><span>noon’i</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+
+                Designed by <a href="#">nifra coder</a>
+            </div>
+
+    </section>
+    <script>
+        window.addEventListener('load', function() {
+          setTimeout(function() {
+              document.body.classList.add('loaded');
+              document.body.style.overflow = 'auto'; // Enable scrolling after the content is loaded
+          }, 2000); // Wait for 5 seconds (5000 milliseconds)
+      });
       
+      </script>
 </body>
+
 </html>

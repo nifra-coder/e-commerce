@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="product1.html">
   <link rel="stylesheet" href="product2.html">
 
-  <title>Template area</title>
+  <title>Shop</title>
   <style>
     * {
       padding: 0;
@@ -68,16 +68,19 @@
 
     /* nav section */
     .log {
-      text-decoration: none;
-      color: rgba(0, 0, 0, 1);
-      font-size: 60px;
-      font-weight: 200;
-    }
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+    font-size: 60px;
+    font-weight: 200;
+    top: 11px;
+    left: 10em;
+    position: absolute;
+    list-style: none;
+}
 
 
     a {
       text-decoration: none;
-      /* display: n; */
     }
 
 
@@ -92,6 +95,7 @@
 
     .nav__attachment {
       background-color: rgb(253, 253, 253);
+      height: 70px;
 
     }
 
@@ -143,6 +147,7 @@
 
     .customizecontainer {
       /* margin: 5em 2em 2em 5em; */
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       width: 10rem;
       height: 10rem;
       overflow: hidden;
@@ -290,11 +295,14 @@
     #list {
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke: 1.5px rgb(141, 2, 2);
+      cursor: pointer;
+
     }
 
     #grip {
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke: 1.5px rgb(53, 47, 47);
+      cursor: pointer;
     }
 
     .bestsellers {
@@ -376,11 +384,10 @@
       width: 285px;
       background-color: rgb(248, 241, 241);
       margin-bottom: 2em;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
 
-    .productcard img {
-      border-radius: 20px;
-    }
+    
 
 
     .productcard h4 {
@@ -834,12 +841,270 @@
         cursor: pointer;
       }
     }
+    /*-------------------------------------------- pop up page for search bar ----------------------------------------------*/
+.mag .checkkk{
+    height: 27px;
+    width: 176px;
+    cursor: pointer;
+    position: relative;
+    opacity: 0;
+}
+
+.popup{
+    position: absolute;
+    top: -2em;
+    right: -5em;
+    width: 300px;
+    height: 700px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-around;
+     color: white;
+    border-radius: 10px;
+    z-index: 10;
+    clip-path: polygon(0 50%, 100% 50%, 100% 50%,0 50% );
+    transition: .4s ;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.096);
+
+}
+.popup .sear{
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    top: 87px;
+    padding: 1em;
+    opacity: 1;
+}
+.popup p{
+  
+        color: black;
+        position: absolute;
+        top: 54px;
+   
+}
+
+label {
+    font-size: 25px;
+    color: #5a5959;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 5px;
+    right: 1em;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input:checked ~ .popup{
+    clip-path: polygon(0 0,100% 0, 100% 100%, 0 100%);
+}
+#mag {
+    position: absolute;
+    left: 78px;
+    top: 0em;
+    font-size: 20px;
+    color: rgb(90, 88, 88);
+    cursor: pointer;
+}
+
+.mag {
+  position: absolute;
+    right: 5em;
+    top: 2.5em;
+}
+.mabtn{
+    width: 29px;
+    height: 31px;
+    position: absolute;
+    top: 6.5em;
+    right: 1.7em;
+}
+/* -----------------------------------------------End of search section----------------------------------------------- */
+/* preloader */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* Fade-out effect for the preloader */
+}
+
+.loader {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: #000000;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite alternate;
+}
+
+.circle:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.circle:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.circle:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+    to {
+        transform: translateY(-50px);
+    }
+}
+
+h2 {
+    color: #070707;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+#content {
+    display: none; /* Hide content initially */
+    padding: 20px;
+}
+
+body.loaded #preloader {
+    opacity: 0; /* Hide the preloader */
+    pointer-events: none; /* Prevent interaction with the preloader */
+}
+
+body.loaded #content {
+    display: block; /* Show content when loaded */
+}
+/* nav bar toggle */
+.navicon input {
+        height: 50px;
+        width: 172px;
+        cursor: pointer;
+        position: relative;
+        top: 1.7em;
+        left: -2em;
+        opacity: 0;
+    }
+
+    .popup1 {
+        position: absolute;
+        top: 0em;
+        left: 0em;
+        width: 300px;
+        height: 500px;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        border: 1px solid black;
+        z-index: 10;
+        clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+        transition: .4s;
+        box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.096);
+
+    }
+
+    .popup1 .sear1 {
+        width: 200px;
+        height: 30px;
+        position: absolute;
+        top: 87px;
+    }
+
+    .popup1 p {
+
+        color: black;
+        position: absolute;
+        top: 54px;
+
+    }
+
+
+    .navicon input:checked~.popup1 {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .nav-items ul li {
+        list-style: none;
+        font-size: 25px;
+
+    }
+
+    .nav-items ul li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .nav-items ul {
+        color: black;
+        display: flex;
+        margin-top: 5em;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        margin-left: 5em;
+    }
+   #wronggg{
+    font-size: 37px;
+    color: #5a5959;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 19px;
+    right: 1em;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
   </style>
 </head>
 
 <body>
+  <div id="preloader">
+    <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <h2>Loading...</h2>
+</div>
+<div class="navicon">
+  <i class="fa fa-bars"></i>
+  <input type="checkbox" id="btn1">
+  <div class="popup1">
+      <div class="nav-items">
+
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="seeallproduct.html">Shop</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="cart.html">Cart</a></li>
+              <li><a href="#service">Service</a></li>
+              <li><a href="Contact"></a>Contact</li>
+          </ul>
+      </div>
+      <br>
+      <input type="search" name="" id="" class="sear" placeholder=" search your choice ">
+      <label for="btn1" id="wronggg"><i class="fa-solid fa-xmark"></i></label>
+  </div>
+</div>
   <header class="nav__attachment">
-    <i class="fa-solid fa-bars"></i>
     <nav class="nav__bar">
 
       <ul class="nav__links">
@@ -847,6 +1112,13 @@
       </ul>
       <div class="mag">
         <i class="fa fa-magnifying-glass" id="mag"></i>
+        <input class="checkkk" type="checkbox" id="btn">
+        <div class="popup">
+          <p>search for product(0):</p>
+          <br>
+          <input type="search" name="" id="" class="sear" placeholder=" search your choice"><span><button class="mabtn"><i class="fa fa-magnifying-glass"></i></button></span>
+          <label for="btn"><i class="fa-solid fa-xmark"></i></label>
+      </div>
       </div>
 
       <div class="cart">
@@ -927,7 +1199,7 @@
 
 
                 <img src="image/women17.1.jpg" alt="">
-                <a href="product1.html" target="_blank">
+                <a href="product1.html" >
                   <img class="top-img" src="image/women17'.jpg" alt="">
                 </a>
                 <h4>pink stylish puff coat on 30% offer with gift<i class="fa fa-heart" id="heartred"></i> </h4>
@@ -962,7 +1234,7 @@
             <div class="productcard">
               <div class="tc-container">
                 <img src="image/women11.jpg" alt="">
-                <a href="product3.html" target="_blank">
+                <a href="product3.html" >
                   <img class="top-img" src="image/women12.jpg" alt="">
                 </a>
                 <button id="btnred">hot</button>
@@ -983,7 +1255,7 @@
             <div class="productcard">
               <div class="tc-container">
                 <img src="image/women10.jpg" alt="">
-                <a href="product4.html" target="_blank">
+                <a href="product4.html" >
                   <img class="top-img" src="image/women10.1.jpg" alt="">
                 </a>
                 <button id="btnsol">sold</button>
@@ -1002,7 +1274,7 @@
             <div class="productcard">
               <div class="tc-container">
                 <img src="image/men-shirts.jpg" alt="">
-                <a href="product5.html" target="_blank">
+                <a href="product5.html" >
                   <img class="top-img" src="image/men-shorts-1.jpg" alt="">
                 </a>
                 <button id="btnred">hot</button>
@@ -1019,7 +1291,7 @@
             <div class="productcard">
               <div class="tc-container">
                 <img src="image/women9.jpg" alt="">
-                <a href="product6.html" target="_blank">
+                <a href="product6.html" >
                   <img class="top-img" src="image/women9.1.jpg" alt="">
                 </a>
                 <h4>long sleeves pullover winter knitwear<i class="fa fa-heart" id="heartred"></i> </h4>
@@ -1038,7 +1310,7 @@
             <div class="productcard">
               <div class="tc-container">
                 <img src="image/women8.jpg" alt="">
-                <a href="product7.html" target="_blank">
+                <a href="product7.html" >
                   <img class="top-img" src="image/women8.1.jpg" alt="">
                 </a>
                 <button id="btnred">hot</button>
@@ -1056,7 +1328,7 @@
             <div class="productcard">
               <div class="tc-container">
                 <img src="image/whitecoatmen.jpg" alt="">
-                <a href="product8.html" target="_blank">
+                <a href="product8.html" >
                   <img class="top-img" src="image/men-coats.jpg" alt="">
                 </a>
                 <button id="btnred">hot</button>
@@ -1074,7 +1346,7 @@
             <div class="productcard">
               <div class="tc-container">
                 <img src="image/men12.jpg" alt="">
-                <a href="product9.html" target="_blank">
+                <a href="product9.html" >
                   <img class="top-img" src="image/men-shirts.jpg" alt="">
                 </a>
                 <button id="btnsol">sold</button>
@@ -1096,7 +1368,7 @@
             <div class="productcard">
               <div class="tc-container">
                 <img src="image/women16.1.jpg" alt="">
-                <a href="product10.html" target="_blank">
+                <a href="product10.html" >
                   <img class="top-img" src="image/women16.jpg" alt="">
                 </a>
                 <h4>pink stylish puff coat on 30% offer with gift<i class="fa fa-heart" id="heartred"></i> </h4>
@@ -1112,7 +1384,7 @@
             <div class="productcard">
               <div class="tc-container">
                 <img src="image/women1.jpg" alt="">
-                <a href="product11.html" target="_blank">
+                <a href="product11.html" >
                   <img class="top-img" src="image/women1.1.jpg" alt="">
                 </a>
                 <button id="btnsol">sold</button>
@@ -1130,7 +1402,7 @@
             <div class="productcard">
               <div class="tc-container">
                 <img src="image/women12.jpg" alt="">
-                <a href="product12.html" target="_blank">
+                <a href="product12.html">
                   <img class="top-img" src="image/women13.1.jpeg" alt="">
                 </a>
                 <button id="btnred">hot</button>
@@ -1388,7 +1660,15 @@
 
   </section>
 
-
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+          document.body.classList.add('loaded');
+          document.body.style.overflow = 'auto'; // Enable scrolling after the content is loaded
+      }, 2000); // Wait for 5 seconds (5000 milliseconds)
+  });
+  
+  </script>
 
 
 </body>
