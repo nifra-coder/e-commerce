@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Blog page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* -------------------------------------------Nav-bar-section------------------------------------------------------- */
+        body {
+            font-family: 'poppins', sans-serif;
+        }
+
+        /*-------------------------------------------- pop up page for search bar ----------------------------------------------*/
+        .mag .barrsear {
+            height: 44px;
+            width: 112px;
+            cursor: pointer;
+            position: relative;
+            top: -25px;
+            opacity: 0;
+        }
+
+        .popup {
+            position: absolute;
+            top: -2em;
+            right: -9em;
+            width: 300px;
+            height: 700px;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: space-around;
+            color: white;
+            border-radius: 10px;
+            z-index: 14;
+            clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+            transition: .4s;
+            box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.096);
+
+        }
+
+        .popup .sear {
+            width: 200px;
+            height: 30px;
+            position: absolute;
+            top: 87px;
+        }
+
+        .popup p {
+
+            color: black;
+            position: absolute;
+            top: 28px;
+
+        }
+
+        #wrong {
+            font-size: 25px;
+            color: #5a5959;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 5px;
+            right: 1em;
+            align-items: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .barrsear:checked~.popup {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        #mag {
+            position: absolute;
+            left: 4.5em;
+            font-size: 20px;
+            color: rgb(90, 88, 88);
+            cursor: pointer;
+        }
+
+        #mag {
+            position: relative;
+        }
+
+        .mag {
+            position: absolute;
+            right: 7em;
+            top: 0em;
+        }
+
+        .all-head-icons {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            position: absolute;
+            right: 2em;
+        }
+
+        /* -----------------------------------------------End of search section----------------------------------------------- */
+        /* .type span{
+    display:inline-block;
+    }
+    .type h2{
+      overflow: hidden;
+      font-size: 60PX;
+      margin-left: 50px;
+    }
+    .type{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .type h2 span:nth-of-type(1){
+      animation-name:developer;
+      animation-duration:7s;
+      animation-iteration-count: infinite;
+      animation-timing-function: steps(9);
+     background-color:rgb(242 246 249);
+      
+    }
+    .type h2 span:nth-of-type(2){
+      animation-name:design;
+      animation-duration:7s;
+      animation-iteration-count: infinite;
+      animation-timing-function: steps(5);
+      background-color:rgb(242 246 249);
+    }
+    .type h2 span:nth-of-type(3){
+      animation-name: prog ;
+      animation-duration:7s;
+      animation-iteration-count: infinite;
+      animation-timing-function: steps(10);
+      background-color:rgb(242 246 249);
+    }
+    
+    
+    @keyframes developer{
+      0%,30%,100%{
+        width:0;
+      }
+      15% ,22.5%{
+       width: calc(12px * 20);
+      }
+    }
+    @keyframes design{
+      0%,30%,60%,100%{
+        width:0;
+      }
+      45%,50%{
+        width: calc(12px * 20);
+      }}
+      @keyframes prog{
+      0%,60%,90%,100%{
+        width:0;
+      }
+      75%,82%{
+         width: calc(12px * 20);
+      }
+    } */
+        .attached {
+            z-index: 20;
+            width: 60px;
+            height: 60px;
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+            position: fixed;
+            right: 4em;
+            bottom: 4em;
+        }
+
+        .attached #mess {
+
+            font-weight: 400;
+            color: white;
+            padding: 14px;
+            font-size: 32px;
+
+        }
+
+        .attached .barrsear1 {
+            height: 60px;
+            width: 30px;
+            cursor: pointer;
+            position: absolute;
+            opacity: 0;
+            right: 15px;
+        }
+
+        .fixedatt {
+            position: relative;
+        }
+
+        .popup1 {
+            position: absolute;
+            bottom: 2em;
+            right: 4em;
+            width: 300px;
+            border-radius: 50%;
+            height: 300px;
+            background-color: rgb(255, 255, 255);
+            border: 2px inset black;
+            color: white;
+            border-radius: 50%;
+            z-index: 10;
+            clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+            transition: .4s;
+            box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.096);
+        }
+
+        .connect {
+            display: flex;
+            /* flex-direction: row; */
+            justify-content: center;
+            gap: 2em;
+            padding: 4em 0em 0em 0em;
+        }
+
+        .connect1 {
+            display: flex;
+            /* flex-direction: row; */
+            justify-content: center;
+            gap: 3em;
+            padding: 3em 0em 0em 0em;
+        }
+
+        #pcall {
+            color: black;
+            cursor: pointer;
+            font-size: 35px;
+
+        }
+
+        #facec {
+            color: black;
+            cursor: pointer;
+            font-size: 35px;
+            /* padding-left: 20px; */
+        }
+
+        #instaagramm {
+
+            color: black;
+            cursor: pointer;
+            padding-left: 20px;
+            font-size: 40px;
+        }
+
+        .connect p {
+            color: black;
+        }
+
+        .connect1 p {
+            color: black;
+        }
+
+        #whatsaaap {
+            color: black;
+            cursor: pointer;
+            padding-left: 20px;
+            font-size: 40px;
+        }
+
+        #wrong1 {
+            /* font-size: 25px; */
+            color: #5a5959;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            right: 6em;
+            bottom: 16em;
+            align-items: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .barrsear1:checked~.popup1 {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+
+        /* ------------------------------------------------Start of navbar----------------------------------------------------- */
+        .log {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 1);
+            margin-left: 40px;
+            font-size: 48px;
+            margin-right: 4em;
+            font-weight: 200;
+        }
+
+        #whatsapp {
+            position: fixed;
+            top: 560px;
+            right: 14px;
+            font-size: 49px;
+            color: green;
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+
+        .nav__bar {
+            max-width: 100%;
+            margin: auto;
+            /* padding: 2rem 1rem; */
+            height: 130px;
+            display: flex;
+            align-items: center;
+            margin-top: -16px;
+
+        }
+
+        .nav__attachment {
+        /* position: fixed;
+           top: 0;
+           right: 0;
+           left: 0;
+           z-index: 100; */
+           background-color: rgb(253, 253, 253);
+
+
+
+        }
+
+        .nav__attachment h1 {
+            display: none;
+            font-size: 30px;
+            font-weight: 300;
+        }
+
+
+
+        .nav__logo {
+            max-width: 100vw;
+
+
+        }
+
+        .nav__links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 2.1em;
+        }
+
+        .link a {
+            position: relative;
+            padding-bottom: 0.75rem;
+            color: black;
+            font-size: 19px;
+            font-weight: 300;
+        }
+
+
+        .link a i {
+            color: rgb(36, 35, 35);
+            font-size: 15px;
+            padding: 8px;
+        }
+
+        li.link {
+            position: relative;
+        }
+
+        li.link::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: #040404;
+            transition: 0.3s;
+        }
+
+        li.link:hover::after {
+            width: 100%;
+        }
+
+
+
+
+        .link a:hover {
+            color: rgb(160, 152, 152);
+
+        }
+
+        #cart {
+            /* position: absolute; */
+            cursor: pointer;
+            /* top: 40px; */
+            /* right: 26px; */
+            font-size: 22px;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 1px rgb(54, 52, 52);
+        }
+
+        #heart {
+            /* position: absolute; */
+            /* top: 39px; */
+            /* right: 70px; */
+            font-size: 22px;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 1px rgb(54, 52, 52);
+            cursor: pointer;
+
+        }
+
+
+        #user {
+            /* position: absolute; */
+            /* top: 39px; */
+            /* right: 111px; */
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 1px rgb(54, 52, 52);
+        }
+
+        /* End of nav bar */
+        /* ----------------------------------------End-Nav-bar-section------------------------------------------------------- */
+        .parallax-linear h1 {
+            font-size: 120px;
+            font-weight: 100;
+            text-align: center;
+            color: rgba(255, 255, 255, .4);
+        }
+
+        .parallax-1 {
+            background: url(image/banner-jennie-calvin-klein.avif) no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .parallax-2 {
+            background: url(image/jennie.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .parallax-3 {
+            background: url(image/bannerword.webp) no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .parallax-4 {
+            background: url(image/blogjennie.avif) no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .parallax-5 {
+            background: url(image/porttfoo.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .parallax-6 {
+            background: url(image/brown.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .parallax-linear {
+            padding: 10% 0;
+        }
+
+        /* footer section */
+        /* footer section */
+
+        .footer {
+            height: 280px;
+        }
+
+        .row10 {
+            display: flex;
+            justify-content: space-between;
+
+
+        }
+
+        .container10 {
+            margin: 3em 7em 0px 7em;
+        }
+
+        .row10 ul li a {
+
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+
+        }
+
+        .row10 ul li a span {
+            color: #070707;
+            font-weight: 500;
+            font-size: 20px;
+        }
+
+        .row10 ul li {
+            list-style: none;
+            padding-bottom: 5px;
+        }
+
+        .aboutweb p {
+            font-size: 15px;
+
+        }
+
+        .aboutweb p strong {
+            color: #060707;
+            font-size: 18px;
+
+        }
+
+        .aboutweb h3 {
+            font-weight: 300;
+            font-size: 36px;
+            letter-spacing: 5px;
+            color: #050505;
+        }
+
+        .row10 ul h4 {
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: #000000;
+        }
+
+        .social-content h4 {
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: #050505;
+        }
+
+        .social-links a i {
+            color: #0a0a0a;
+            font-size: 30px;
+            margin: 6px;
+        }
+
+        /* footer-bottom */
+        .footer-botom {
+            background-color: #080808;
+            color: white;
+            height: 70px;
+
+        }
+
+        .container11 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .copyright {
+            margin-top: 2em;
+            margin-left: 4em;
+            color: #ced0d3;
+
+        }
+
+        .credits {
+            margin-top: 2em;
+            color: #ced0d3;
+            margin-right: 4em;
+            /* font-size: 10px; */
+
+        }
+
+        .credits a {
+            text-decoration: none;
+            color: #edeff0;
+
+        }
+
+
+
+
+
+
+        @media screen and (min-width: 300px) and (max-width: 575px) {
+
+            .navbar {
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding: 20px 28px 10px 10px;
+                justify-content: space-between;
+
+
+            }
+
+            .navbar-center {
+                order: 1;
+                font-size: 22px;
+            }
+
+            .navbar-links {
+                order: 3;
+                width: 100%;
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                justify-content: space-between;
+                gap: 0.7rem;
+                height: 0;
+                overflow: hidden;
+                padding: 0;
+            }
+
+            .ham-icon {
+                display: block;
+                order: 2;
+            }
+
+            i.fa-solid.fa-x {
+                display: none;
+            }
+
+            .fa-x,
+            .fa-bars {
+                color: black;
+                font-size: 1.7rem;
+            }
+
+            .navbar:has(input[type="checkbox"]:checked) .navbar-links {
+                margin-top: 1rem;
+                height: 300px;
+            }
+
+            .navbar:has(input[type="checkbox"]:checked) .fa-bars {
+                display: none;
+            }
+
+            .navbar:has(input[type="checkbox"]:checked) .fa-x {
+                display: inline-block;
+            }
+
+
+            .hotel-name {
+                font-size: 28px;
+            }
+
+            .hotel-subtitle {
+                font-size: 20px;
+            }
+
+            .navbar-links {
+                flex-direction: column;
+                gap: 5px;
+                font-size: 18px;
+            }
+
+            .payment-logos {
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+            }
+
+            .parallax-linear h1 {
+                font-size: 80px;
+            }
+
+            .parallax-1,
+            .parallax-2,
+            .parallax-3,
+            .parallax-4,
+            .parallax-5,
+            .parallax-6 {
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }
+        }
+
+        @media screen and (min-width: 576px) and (max-width: 768px) {
+
+            .navbar {
+                padding: 10px 0;
+            }
+
+            .hotel-name {
+                font-size: 30px;
+            }
+
+            .hotel-subtitle {
+                font-size: 22px;
+            }
+
+            .navbar-links {
+                gap: 20px;
+                font-size: 20px;
+            }
+
+
+
+            .parallax-linear h1 {
+                font-size: 100px;
+            }
+
+            .parallax-1,
+            .parallax-2,
+            .parallax-3,
+            .parallax-4,
+            .parallax-5,
+            .parallax-6 {
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }
+        }
+
+        @media screen and (min-width: 769px) and (max-width: 991px) {
+            .navbar {
+                padding: 15px 0;
+            }
+
+            .hotel-name {
+                font-size: 32px;
+            }
+
+            .hotel-subtitle {
+                font-size: 24px;
+            }
+
+            .navbar-links {
+                gap: 30px;
+                font-size: 22px;
+            }
+
+
+
+            .parallax-linear h1 {
+                font-size: 120px;
+            }
+
+            .parallax-1,
+            .parallax-2,
+            .parallax-3,
+            .parallax-4,
+            .parallax-5,
+            .parallax-6 {
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }
+        }
+
+        @media screen and (min-width: 992px) and (max-width: 1200px) {
+            .navbar {
+                padding: 20px 0;
+            }
+
+            .hotel-name {
+                font-size: 34px;
+            }
+
+            .hotel-subtitle {
+                font-size: 26px;
+            }
+
+            .navbar-links {
+                gap: 40px;
+                font-size: 24px;
+            }
+
+
+
+            .parallax-linear h1 {
+                font-size: 140px;
+            }
+
+            .parallax-1,
+            .parallax-2,
+            .parallax-3,
+            .parallax-4,
+            .parallax-5,
+            .parallax-6 {
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }
+        }
+    </style>
+
+<body>
+    <header class="nav__attachment">
+        <h1>noon’i</h1>
+
+        <nav class="nav__bar">
+
+            <ul class="nav__links">
+                <li class="log">noon’i</li>
+                <li class="link"><a href="index.html">Home</a></li>
+                <li class="link"><a href="#about">About</a></li>
+                <li class="link"><a href="seeallproduct.html">Shop</a>
+                <li class="link"><a href="#">blog</a>
+                </li>
+                <li class="link"><a href="portfolio.html">protofolio</a></li>
+                <li class="link"><a href="#service">Service</a></li>
+                <!-- <li class="link"><a href="#contact us">contact us<i class="fa-solid fa-angle-down"></i></a>
+              <div class="sub__menu1">
+                <ul>
+                  <li><a href="#">email</a></li>
+                  <li><a href="#">whatsapp</a></li>
+                </ul>
+              </div>
+            </li> -->
+            </ul>
+            <!-- navv barr -->
+
+            <!------------------------------------------------ start of search ---------------------------------------------->
+            <div class="all-head-icons">
+                <div class="mag">
+                    <i class="fa fa-magnifying-glass" id="mag"></i>
+                    <input class="barrsear" type="checkbox" id="btn">
+                    <div class="popup">
+                        <p>search for product(0):</p>
+                        <br>
+                        <input type="search" name="" id="" class="sear" placeholder=" search your choice ">
+                        <label id="wrong" for="btn"><i class="fa-solid fa-xmark"></i></label>
+                    </div>
+                </div>
+                <!------------------------------------------------- end of search bar -------------------------------------------->
+                <div class="cart">
+                    <a href="cart.html"><i class="fa fa-cart-shopping" id="cart"></i></a>
+                </div>
+                <!--------------------------------------- start of heart section--------------------------------------------------->
+                <div class="heart">
+                    <i class="fa fa-heart" id="heart"></i>
+                </div>
+                <!-------------------------------------------- End of hear section ---------------------------------------------->
+
+                <!----------------------------------------------Start of user section -------------------------------------------->
+                <div class="userr">
+                    <i class="fa fa-circle-user" id="user"></i>
+
+                </div>
+            </div>
+            <!------------------------------------------------End of user section---------------------------------------------->
+        </nav>
+        <div class="fixedatt">
+            <div class="attached">
+                <i class="fa-regular fa-message" id="mess"></i>
+                <input class="barrsear1" type="checkbox" id="btn1">
+                <div class="popup1">
+                    <div class="connect">
+                        <div class="ins">
+                            <i class="fa-brands fa-instagram" id="instaagramm"></i>
+                            <p>Instagram</p>
+                        </div>
+                        <div class="what">
+                            <i class="fa-brands fa-whatsapp" id="whatsaaap"></i>
+                            <p>whatsapp</p>
+                        </div>
+                    </div>
+                    <div class="connect1">
+
+                        <div class="ph">
+                            <i class="fa-solid fa-phone" id="pcall"></i>
+                            <p>call</p>
+                        </div>
+                        <div class="faph">
+                            <i class="fa-regular fa-envelope" id="facec"></i>
+                            <p>Email</p>
+                        </div>
+                    </div>
+                    <label id="wrong1" for="btn1"><i class="fa-solid fa-xmark"></i></label>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <section class="parallax-1">
+            <div class="parallax-linear">
+                <h1>Models</h1>
+            </div>
+        </section>
+        <h2>CARSTEN HOTEL</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque, corrupti nulla deleniti
+            provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus? Consequuntur debitis
+            dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo atque amet suscipit
+            alias quasi minima possimus.</p>
+        <section class="parallax-2">
+            <div class="parallax-linear">
+                <h1>luxury rooms</h1>
+            </div>
+        </section>
+        <h2>CARSTEN HOTEL ROOMS</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque, corrupti nulla deleniti
+            provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus? Consequuntur debitis
+            dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo atque amet suscipit
+            alias quasi minima possimus.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque, corrupti nulla deleniti
+            provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus? Consequuntur debitis
+            dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo atque amet suscipit
+            alias quasi minima possimus Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque,
+            corrupti nulla deleniti provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus?
+            Consequuntur debitis dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo
+            atque amet suscipit alias quasi minima possimus Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Sunt eos error cumque, corrupti nulla deleniti provident saepe beatae mollitia aliquam ex consequatur
+            ratione consequuntur ducimus? Consequuntur debitis dignissimos, illum rerum culpa praesentium dicta, iusto
+            assumenda, inventore quas nemo atque amet suscipit alias quasi minima possimus.</p>
+        <section class="parallax-3">
+            <div class="parallax-linear">
+                <h1>luxury villa</h1>
+            </div>
+        </section>
+        <h2>CARSTEN VILLA</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque, corrupti nulla deleniti
+            provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus? Consequuntur debitis
+            dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo atque amet suscipit
+            alias quasi minima possimus.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque, corrupti nulla deleniti
+            provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus? Consequuntur debitis
+            dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo atque amet suscipit
+            alias quasi minima possimus Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque,
+            corrupti nulla deleniti provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus?
+            Consequuntur debitis dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo
+            atque amet suscipit alias quasi minima possimus Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Sunt eos error cumque, corrupti nulla deleniti provident saepe beatae mollitia aliquam ex consequatur
+            ratione consequuntur ducimus? Consequuntur debitis dignissimos, illum rerum culpa praesentium dicta, iusto
+            assumenda, inventore quas nemo atque amet suscipit alias quasi minima possimus.</p>
+        <section class="parallax-4">
+            <div class="parallax-linear">
+                <h1>Amazing view</h1>
+            </div>
+        </section>
+        <h2>CARSTEN HOTEL VIEW</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque, corrupti nulla deleniti
+            provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus? Consequuntur debitis
+            dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo atque amet suscipit
+            alias quasi minima possimus.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque, corrupti nulla deleniti
+            provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus? Consequuntur debitis
+            dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo atque amet suscipit
+            alias quasi minima possimus Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque,
+            corrupti nulla deleniti provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus?
+            Consequuntur debitis dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo
+            atque amet suscipit alias quasi minima possimus Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Sunt eos error cumque, corrupti nulla deleniti provident saepe beatae mollitia aliquam ex consequatur
+            ratione consequuntur ducimus? Consequuntur debitis dignissimos, illum rerum culpa praesentium dicta, iusto
+            assumenda, inventore quas nemo atque amet suscipit alias quasi minima possimus.</p>
+        <section class="parallax-5">
+            <div class="parallax-linear">
+                <h1>blue lagoon</h1>
+            </div>
+        </section>
+        <h2>CARSTEN HOTEL LAGOON</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque, corrupti nulla deleniti
+            provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus? Consequuntur debitis
+            dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo atque amet suscipit
+            alias quasi minima possimus.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque, corrupti nulla deleniti
+            provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus? Consequuntur debitis
+            dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo atque amet suscipit
+            alias quasi minima possimus Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque,
+            corrupti nulla deleniti provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus?
+            Consequuntur debitis dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo
+            atque amet suscipit alias quasi minima possimus Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Sunt eos error cumque, corrupti nulla deleniti provident saepe beatae mollitia aliquam ex consequatur
+            ratione consequuntur ducimus? Consequuntur debitis dignissimos, illum rerum culpa praesentium dicta, iusto
+            assumenda, inventore quas nemo atque amet suscipit alias quasi minima possimus.</p>
+        <section class="parallax-6">
+            <div class="parallax-linear">
+                <h1>Amazing rooms</h1>
+            </div>
+        </section>
+        <h2>CARSTEN HOTEL ROOMS</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque, corrupti nulla deleniti
+            provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus? Consequuntur debitis
+            dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo atque amet suscipit
+            alias quasi minima possimus.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque, corrupti nulla deleniti
+            provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus? Consequuntur debitis
+            dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo atque amet suscipit
+            alias quasi minima possimus Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eos error cumque,
+            corrupti nulla deleniti provident saepe beatae mollitia aliquam ex consequatur ratione consequuntur ducimus?
+            Consequuntur debitis dignissimos, illum rerum culpa praesentium dicta, iusto assumenda, inventore quas nemo
+            atque amet suscipit alias quasi minima possimus Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Sunt eos error cumque, corrupti nulla deleniti provident saepe beatae mollitia aliquam ex consequatur
+            ratione consequuntur ducimus? Consequuntur debitis dignissimos, illum rerum culpa praesentium dicta, iusto
+            assumenda, inventore quas nemo atque amet suscipit alias quasi minima possimus.</p>
+    </section>
+
+
+    <div class="footer">
+        <hr style="border: 1px solid black;">
+        <div class="container10">
+            <div class="row10">
+                <div class="aboutweb">
+                    <h3>noon’i</h3>
+                    <p>
+                        A108 Adam Street <br>
+                        New York, NY 535022<br>
+                        United States <br> <br>
+                        <strong>Phone:</strong> +1 5589 55488 55<br>
+                        <strong>Email:</strong> noon’i@example.com<br>
+                    </p>
+                </div>
+
+
+                <ul>
+                    <h4>Useful Links</h4>
+                    <li><a href="#"><span>&#x3e;</span> Home</a></li>
+                    <li><a href="#"><span>&#x3e;</span> About us</a></li>
+                    <li><a href="#"><span>&#x3e;</span> Services</a></li>
+                    <li><a href="#"><span>&#x3e;</span> Terms of service</a></li>
+                    <li><a href="#"><span>&#x3e;</span> Privacy policy</a></li>
+                </ul>
+
+
+                <ul>
+                    <h4>Our Services</h4>
+                    <li><a href="#"><span>&#x3e;</span> Web Design</a></li>
+                    <li><a href="#"><span>&#x3e;</span> Web Development</a></li>
+                    <li><a href="#"><span>&#x3e;</span> Product Management</a></li>
+                    <li><a href="#"><span>&#x3e;</span> Marketing</a></li>
+                    <li><a href="#"><span>&#x3e;</span> Graphic Design</a></li>
+                </ul>
+
+                <div class="social-content">
+                    <h4>Our Social Networks</h4>
+                    <p>Cras fermentum odio eu feugiat <br>
+                        lide par naso tierra videa magna <br>
+                        derita valies</p>
+                    <div class="social-links ">
+                        <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i> </a>
+                        <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i> </a>
+                        <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="google-plus"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-botom">
+        <div class="container11">
+            <div class="copyright">
+                &copy; Copyright <strong><span>noon’i</span></strong> .All Rights Reserved
+            </div>
+            <div class="credits">
+
+                Designed by <a href="#">nifra coder</a>
+            </div>
+
+        </div>
+</body>
+
+</html>

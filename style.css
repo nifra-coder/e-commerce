@@ -85,12 +85,13 @@ body {
     right: 7em;
     top: 0em;
 }
-.all-head-icons{
+
+.all-head-icons {
     display: flex;
     align-items: center;
     gap: 1em;
     position: absolute;
-    right:2em;
+    right: 2em;
 }
 
 /* -----------------------------------------------End of search section----------------------------------------------- */
@@ -197,7 +198,7 @@ body {
     border-radius: 50%;
     height: 300px;
     background-color: rgb(255, 255, 255);
-
+    border: 2px inset black;
     color: white;
     border-radius: 50%;
     z-index: 10;
@@ -354,17 +355,32 @@ a {
     font-weight: 300;
 }
 
+
 .link a i {
     color: rgb(36, 35, 35);
     font-size: 15px;
     padding: 8px;
 }
-
-
-
-.link a:hover::after {
-    width: 50%;
+li.link{
+    position: relative;
 }
+li.link::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: #040404;
+    transition: 0.3s;
+}
+
+li.link:hover::after {
+    width: 100%;
+}
+
+
+
 
 .link a:hover {
     color: rgb(160, 152, 152);
@@ -408,16 +424,14 @@ a {
 
 
 /* START OF HOME SECTION */
-#home {
-    height: 700px;
-}
+#home {}
 
 
 
 .container {
     display: flex;
+    flex-wrap: wrap;
     background-color: rgb(242 246 249);
-    height: 600px;
     position: relative;
     justify-content: center;
 }
@@ -455,35 +469,14 @@ a {
     font-size: 18px;
     font-weight: 300;
 }
-.leftcontent p{
+
+.leftcontent p {
     width: 100%;
     font-size: 18px;
 }
 
 
-/* .leftcontent h2 span {
-    -webkit-text-fill-color: black;
 
-} */
-
-/* .leftcontent h4 {
-    font-size: 17px;
-    font-weight: 700;
-    position: absolute;
-    bottom: 3em;
-    left: 15em;
-    border: 2px solid #383944;
-    color: #0f0e0e;
-    padding: 10px;
-    cursor: pointer;
-    display: inline-block;
-} */
-
-
-/* .leftcontent h4:hover {
-    color: #4561ff;
-
-} */
 #shopnow {
     background: #c2c2f0;
     border: 2px solid black;
@@ -535,7 +528,8 @@ a {
 
 #head2 {
 
-    width: 451px;
+    width: 100%;
+    max-width: 320px;
     z-index: 12;
 }
 
@@ -549,6 +543,7 @@ a {
     font-size: 50px;
     font-weight: 400;
     margin-left: 1.5em;
+    margin-top: 2em;
     color: rgb(44, 39, 39);
 
 }
